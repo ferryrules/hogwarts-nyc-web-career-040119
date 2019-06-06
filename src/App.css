@@ -64,25 +64,12 @@ ul {
 
 .subtleText {
   color: #D1D1D1;
-  font-size: .75em; 
+  font-size: .75em;
 }
 
 
 .indexWrapper {
   margin: auto;
-}
-
-
-.pigTile {
-  display: inline;
-  background-repeat: no-repeat;
-  background-position: center 90%;
-  float: left;
-  margin: 2%;
-  padding: 1%;
-  outline: #3B0B0B dotted thick;
-  transition: 0.75s;
-  opacity: 1;
 }
 
 .minBackgroundSneak {
@@ -102,9 +89,22 @@ ul {
   opacity: 0.75;
 }
 
-.pigTile h3 {
+.custpigTile {
+  transition: 0.75s;
+}
+.custpigTile h3 {
   color: #FBB;
 }
+.custpigTile:hover {
+  transform: scale(1.05);
+}
+
+
+.pigBackTile {
+  background-color: white;
+  opacity: inherit;
+}
+
 .minPigTile {
   width: 250px;
   height: 250px;
@@ -116,11 +116,6 @@ ul {
   width: 500px;
   height: 500px;
 }
-
-.pigTile:hover {
-  transform: scale(1.05);
-}
-
 
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
@@ -137,4 +132,50 @@ ul {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.movie-card {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card:active {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  backface-visibility: hidden;
+  background-size: cover;
+}
+
+.card-front {
+  filter: grayscale(100%);
+  transition-duration: 1s;
+  box-shadow: 5px 5px 10px;
+  box-shadow: 5px 5px 10px rgb(55, 55, 55, 0.85);
+}
+
+.card-front:hover {
+  filter: grayscale(0%);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  box-shadow: 5px 5px 10px rgb(55, 55, 55, 0.85);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
